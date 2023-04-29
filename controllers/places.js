@@ -10,7 +10,7 @@ router.get('/new', (req, res) => {
   res.redirect('places/new')
 })
 
-router.post('/', (req, res) => {
+/*router.post('/', (req, res) => {
   if (!req.body.pic) {
     req.body.pic = 'http://placekitten.com/400/400'
   }
@@ -41,6 +41,6 @@ router.get('/', (req, res) => {
       
     res.render('places/index',{places});
 });
-
+*/
 module.exports = router;
 
