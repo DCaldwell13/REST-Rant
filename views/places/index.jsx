@@ -1,20 +1,20 @@
+const React = require('react')
+const Def = require('../default')
+
 const index = (data) => {
     let placesFormatted = data.places.map((place) => {
       return (
         <div className="col-sm-6">
           <h2>{place.name}</h2>
           <a href={`/places/${index}`}>
-            {place.name}
-          </a>
-          <p className="text-center">
+            { place.name } 
+        </a><p className="text-center">
             {place.cuisines}
-          </p>
-          <img src={place.pic} alt={place.name}/>
-          <p className="text-center">
-            Located in {placce.city}, {place.state}
+          </p><img src={place.pic} alt={place.name} /><p className="text-center">
+            Located in {place.city}, {place.state}
           </p>
         </div>
-      )
+        )
     });
     return (
       <Def>
@@ -28,4 +28,4 @@ const index = (data) => {
   )
   };
   
-  //module.exports = index;
+  module.exports = index;
