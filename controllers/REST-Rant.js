@@ -4,7 +4,7 @@ const router = require('express').Router();
     res.send('GET /places');
 });*/
 
-router.get('/', (req, res) => {
+/*router.get('/', (req, res) => {
     let places = [{
         name: 'H-Thai-ML',
         city: 'Seattle',
@@ -22,5 +22,5 @@ router.get('/', (req, res) => {
     res.render('places/index',{places});
 });
 
-module.exports = router;
+module.exports = router;*/
 

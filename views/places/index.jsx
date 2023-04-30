@@ -28,4 +28,4 @@ const index = (data) => {
   )
   };
   
-  
+  //module.exports = index;

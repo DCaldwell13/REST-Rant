@@ -6,9 +6,11 @@ module.exports = [{
     pic: '/images/h-thai-ml-tables.jpg'
 }, {
     name: 'Coding Cat Cafe',
+    rating: 'Currently Unrated',
+    Description: ({
     city: 'Phoenix',
     state: 'AZ',
     cuisines: 'Coffee, Bakery',
-    pic: '/images/coffee-cat.jpg'
+    pic: '/images/coffee-cat.jpg'})
 }]
 //This is where my code messed up
