@@ -40,6 +40,14 @@ const edit_form = (data) => {
                         id="cuisines" 
                         name="cuisines" required />
                     </div>
+                    <div className="form-group col-sm-4">
+                        <label htmlFor="founded">Founded Year</label>
+                        <input type="number" className="form-control" 
+                        id="founded" 
+                        name="founded" 
+                        value={data.place.founded}
+                        />
+                    </div>
                     <input className="btn btn-primary" 
                     type="submit" 
                     value="Add Place" />

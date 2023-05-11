@@ -7,7 +7,25 @@ const show= (data) => {
       No comments yet!
     </h3>
   )
+  let rating = (
+    <h3 className="inactive">
+      No ratings yet
+    </h3>
+  )
   if (data.place.comments.length) {
+    let sumRatings = data.place.comments.reduce((tot, c) => {
+      return tot + c.stars
+    }, 0)
+    let averageRating = Math.round(sumRatings/ data.place.comments.length)
+    let stars =''
+    for (let i = 0; i < averageRating; i++) {
+      stars += '⭐'
+    }
+    rating =(
+      <h3>
+        {stars} stars
+      </h3>
+    )
     comments = data.place.comments.map((comment, i) => {
       return (
         <div className="border">
@@ -26,7 +44,7 @@ const show= (data) => {
           <main>
            <div className="col-sm-6">
             <h1>{data.place.name}</h1>
-            <a href="`/places/${data.place.id}/edit" className="btn btn-warning"> 
+            <a href={`/places/${data.place.id}/edit`} className="btn btn-warning"> 
                Edit
             </a> 
             <h3>
@@ -34,11 +52,13 @@ const show= (data) => {
             </h3>
             </div>
             <div className="col-sm-6">
-            <form method="POST" action={`/places/${data.place.id}?_method=DELETE`}> 
-              <button type="submit" className="btn btn-danger">
+            <form method="POST" action={`/places/${data.place.id}/comment?_method=DELETE`}> 
+              <button type="submit" className="btn btn-danger" value="Delete Comment">
                  Delete
               </button>
               <h2>Rating</h2>
+              {rating}
+              <br />
               <h2>Description</h2>
               <h3>
                 {data.place.showEstablished()}
